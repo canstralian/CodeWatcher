@@ -38,6 +38,29 @@ CodeWatcher automatically:
    ```bash
    mkdir -p .github/workflows
    curl -o .github/workflows/codewatcher.yml https://raw.githubusercontent.com/your-org/CodeWatcher/main/.github/workflows/codewatcher.yml
-   ```   
+   ```
 
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+2. Create the scripts directory:
+   ```bash
+   mkdir -p .github/scripts
+   curl -o .github/scripts/codewatcher.py https://raw.githubusercontent.com/your-org/CodeWatcher/main/.github/scripts/codewatcher.py
+   ```
+
+3. Commit and push these changes to your repository:
+   ```bash
+   git add .github
+   git commit -m "Add CodeWatcher security review workflow"
+   git push
+   ```
+
+## Configuration
+
+Customize CodeWatcher by adding these files to your repository root:
+
+- `.pylintrc` - Pylint configuration
+- `.bandit` - Bandit configuration
+- `.semgrep.yml` - Custom Semgrep rules
+
+## Example Output
+
+![CodeWatcher in action](https://github.com/your-org/CodeWatcher/raw/main/images/example-comment.png)
